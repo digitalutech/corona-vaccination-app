@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Appointments</h2>
+
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+            <thead>
+                <tr class="bg-gray-200 text-gray-700">
+                    <th class="py-2 px-4 border-b">Name</th>
+                    <th class="py-2 px-4 border-b">Age</th>
+                    <th class="py-2 px-4 border-b">Gender</th>
+                    <th class="py-2 px-4 border-b">Vaccine</th>
+                    <th class="py-2 px-4 border-b">Date</th>
+                    <th class="py-2 px-4 border-b">Actions</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appointment of appointments; let i = index" class="hover:bg-gray-100">
+                    <td class="py-2 px-4 border-b">{{ appointment.name }}</td>
+                    <td class="py-2 px-4 border-b">{{ appointment.age }}</td>
+                    <td class="py-2 px-4 border-b">{{ appointment.gender }}</td>
+                    <td class="py-2 px-4 border-b">{{ appointment.vaccine }}</td>
+                    <td class="py-2 px-4 border-b">{{ appointment.date | date }}</td>
+                    <td class="py-2 px-4 border-b flex space-x-2">
+                      <button 
+                          (click)="deleteAppointment(i)" 
+                          class="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                          Delete
+                      </button>
+                      <button 
+                          (click)="editAppointment(i)" 
+                          class="bg-green-600 text-white py-1 px-3 rounded hover:bg-green-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                          Update
+                      </button>
+                  </td>
+                  
+                 
+                    
+                 
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="appointments.length === 0" class="text-center text-gray-500 mt-4">
+            No appointments found.
+        </div>
+    </div>
+</body>
+</html>

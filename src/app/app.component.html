@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-200 shadow-md p-4 rounded-lg">
+        <div class="container mx-auto flex justify-around">
+            <a routerLink="/book" routerLinkActive="active" class="text-gray-700 hover:text-blue-600 transition duration-200 p-2 rounded">
+                Book Appointment
+            </a>
+            <a routerLink="/appointments" routerLinkActive="active" class="text-gray-700 hover:text-blue-600 transition duration-200 p-2 rounded">
+                View Appointments
+            </a>
+            <a routerLink="/summary" routerLinkActive="active" class="text-gray-700 hover:text-blue-600 transition duration-200 p-2 rounded">
+                Vaccination Summary
+            </a>
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+</body>
+</html>

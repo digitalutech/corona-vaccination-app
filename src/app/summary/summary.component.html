@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination Summary</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Vaccination Summary</h2>
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+            <thead>
+                <tr class="bg-gray-200 text-gray-700">
+                    <th class="py-2 px-4 border-b text-left">Description</th>
+                    <th class="py-2 px-4 border-b text-left">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4 border-b">Total Vaccinations</td>
+                    <td class="py-2 px-4 border-b">{{ totalVaccinations }}</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4 border-b">Total Male Vaccinations</td>
+                    <td class="py-2 px-4 border-b">{{ maleVaccinations }}</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4 border-b">Total Female Vaccinations</td>
+                    <td class="py-2 px-4 border-b">{{ femaleVaccinations }}</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4 border-b">Total Vaccinations for Age Group 18 to 44</td>
+                    <td class="py-2 px-4 border-b">{{ ageGroup1844 }}</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4 border-b">Total Vaccinations for Age Group 45+</td>
+                    <td class="py-2 px-4 border-b">{{ ageGroup45Plus }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
